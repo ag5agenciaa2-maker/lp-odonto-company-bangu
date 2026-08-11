@@ -17,11 +17,11 @@ const SERVICOS = [
    (2 colunas), md = médio, sm = pequeno. */
 
 const VIDEOS = [
-  { titulo: 'Um sonho realizado', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b19ec16b30c41bbd37f9d.mp4' },
-  { titulo: 'Conheça nossa equipe', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6339994d35aa0a3a195.mp4' },
-  { titulo: 'Depoimento: Evandro', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a0116b30c41bbd3d8f1.mp4' },
-  { titulo: 'Autoestima em alta', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1ac21c6fe2d3362a294a.mp4' },
-  { titulo: 'Depoimento: implante', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a9c881827a02eb8f32f.mp4' }
+  { titulo: 'Um sonho realizado', arquivo: 'odontocompany-bangu-depoimento-sonho-realizado', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b19ec16b30c41bbd37f9d.mp4' },
+  { titulo: 'Conheça nossa equipe', arquivo: 'odontocompany-bangu-apresentacao-equipe-doutora', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6339994d35aa0a3a195.mp4' },
+  { titulo: 'Depoimento: Evandro', arquivo: 'odontocompany-bangu-depoimento-paciente-evandro', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a0116b30c41bbd3d8f1.mp4' },
+  { titulo: 'Autoestima em alta', arquivo: 'odontocompany-bangu-depoimento-autoestima-sorriso', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1ac21c6fe2d3362a294a.mp4' },
+  { titulo: 'Depoimento: implante', arquivo: 'odontocompany-bangu-depoimento-implante-brinde', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a9c881827a02eb8f32f.mp4' }
 ];
 
 const FAQ = [
