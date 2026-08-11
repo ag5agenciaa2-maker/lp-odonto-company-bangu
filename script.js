@@ -17,18 +17,11 @@ const SERVICOS = [
    (2 colunas), md = médio, sm = pequeno. */
 
 const VIDEOS = [
-  { titulo: 'Um sonho realizado', arquivo: 'odontocompany-bangu-depoimento-sonho-realizado', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b19ec16b30c41bbd37f9d.mp4' },
+  { titulo: 'Relato de paciente', arquivo: 'odontocompany-bangu-depoimento-sonho-realizado', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b19ec16b30c41bbd37f9d.mp4' },
   { titulo: 'Conheça nossa equipe', arquivo: 'odontocompany-bangu-apresentacao-equipe-doutora', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6339994d35aa0a3a195.mp4' },
-  { titulo: 'Depoimento: Evandro', arquivo: 'odontocompany-bangu-depoimento-paciente-evandro', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a0116b30c41bbd3d8f1.mp4' },
-  { titulo: 'Autoestima em alta', arquivo: 'odontocompany-bangu-depoimento-autoestima-sorriso', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1ac21c6fe2d3362a294a.mp4' },
-  { titulo: 'Depoimento: implante', arquivo: 'odontocompany-bangu-depoimento-implante-brinde', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a9c881827a02eb8f32f.mp4' }
-];
-
-const FAQ = [
-  { q: 'Atendem convênio?', a: 'Sim. Trabalhamos com Amil, SulAmérica, Brasil Dental, Mais Dental e Inpao. Se o seu plano não estiver na lista, fale com a gente pelo WhatsApp — temos condições facilitadas para particulares.' },
-  { q: 'Tenho muito medo de dentista. E agora?', a: 'Você não é exceção — é a maioria. A primeira consulta é uma conversa: explicamos cada passo antes de qualquer procedimento e respeitamos o seu tempo. Nada é feito sem o seu ok.' },
-  { q: 'Quanto custa a avaliação?', a: 'Agende pelo WhatsApp e nossa recepção informa as condições vigentes de avaliação e o plano de tratamento personalizado, sem compromisso.' },
-  { q: 'Atendem crianças e idosos?', a: 'Sim. Atendemos todas as idades, com tratamentos personalizados para cada fase — de odontopediatria a reabilitação com prótese e implante.' }
+  { titulo: 'Relato de paciente', arquivo: 'odontocompany-bangu-depoimento-paciente-evandro', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a0116b30c41bbd3d8f1.mp4' },
+  { titulo: 'Relato de paciente — tratamento estético', arquivo: 'odontocompany-bangu-depoimento-autoestima-sorriso', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1ac21c6fe2d3362a294a.mp4' },
+  { titulo: 'Relato de paciente — implante', arquivo: 'odontocompany-bangu-depoimento-implante-brinde', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a9c881827a02eb8f32f.mp4' }
 ];
 
 const DEPOIMENTOS = [
@@ -42,6 +35,13 @@ const DEPOIMENTOS = [
   { nome: 'Rose Alves', quando: '1 semana atrás', texto: 'Ótimo atendimento, rápido e eficiente. Recomendo.' },
   { nome: 'Marcela Santiago', quando: '4 meses atrás', texto: 'Excelente atendimento! Super recomendo.' },
   { nome: 'Wolf James', quando: '3 semanas atrás', texto: 'Ótimo atendimento e serviço de qualidade! Indico.' }
+];
+
+const FAQ = [
+  { q: 'Atendem convênio?', a: 'Sim. Trabalhamos com Amil, SulAmérica, Brasil Dental, Mais Dental e Inpao. Se o seu plano não estiver na lista, fale com a gente pelo WhatsApp — temos condições facilitadas para particulares.' },
+  { q: 'Tenho muito medo de dentista. E agora?', a: 'Você não é exceção — é a maioria. A primeira consulta é uma conversa: explicamos cada passo antes de qualquer procedimento e respeitamos o seu tempo. Nada é feito sem o seu ok.' },
+  { q: 'Quanto custa a avaliação?', a: 'Agende pelo WhatsApp e nossa recepção informa as condições vigentes de avaliação e o plano de tratamento personalizado, sem compromisso.' },
+  { q: 'Atendem crianças e idosos?', a: 'Sim. Atendemos todas as idades, com tratamentos personalizados para cada fase — de odontopediatria a reabilitação com prótese e implante.' }
 ];
 
 const WHATSAPP = '5521987575433';
@@ -382,7 +382,7 @@ let depTimer = null;
 if (slider) {
   slider.innerHTML = DEPOIMENTOS.map((d, i) => `
     <blockquote class="slide" data-active="${i === 0}">
-      <p>“${esc(d.texto)}”</p>
+      <p>"${esc(d.texto)}"</p>
       <footer>
         <span class="avatar">${esc(d.nome.charAt(0))}</span>
         <span><strong>${esc(d.nome)}</strong><small>${esc(d.quando)} · ★★★★★</small></span>
@@ -404,8 +404,10 @@ if (slider) {
     clearInterval(depTimer);
     depTimer = setInterval(() => mostrar(depAtual + 1), 6000);
   };
-  document.getElementById('dep-prev').addEventListener('click', () => { mostrar(depAtual - 1); reiniciar(); });
-  document.getElementById('dep-next').addEventListener('click', () => { mostrar(depAtual + 1); reiniciar(); });
+  const prevBtn = document.getElementById('dep-prev');
+  const nextBtn = document.getElementById('dep-next');
+  if (prevBtn) prevBtn.addEventListener('click', () => { mostrar(depAtual - 1); reiniciar(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { mostrar(depAtual + 1); reiniciar(); });
 
   let x0 = null;
   slider.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });

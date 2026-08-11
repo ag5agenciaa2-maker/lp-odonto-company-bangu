@@ -565,13 +565,15 @@ video::-internal-media-controls-overlay-cast-button{display:none!important;-webk
 [data-reveal="zoom"]{transform:scale(.96)}
 [data-reveal].is-visible{opacity:1;transform:none}
 
-/* Entrada em cascata da Hero */
-.hero-copy>*{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out)}
-.hero-copy.is-visible>.eyebrow{transition-delay:.05s}
-.hero-copy.is-visible>h1{transition-delay:.16s}
-.hero-copy.is-visible>.lead{transition-delay:.28s}
-.hero-copy.is-visible>.btn-row{transition-delay:.4s}
-.hero-copy.is-visible>*{opacity:1;transform:none}
+/* PageSpeed fix: Hero visível por padrão (sem opacity:0 incondicional) — o elemento LCP não pode
+   depender do JS para aparecer. A entrada em cascata só ativa se algo reintroduzir data-reveal aqui. */
+.hero-copy>*{opacity:1;transform:none}
+[data-reveal].hero-copy>*{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out)}
+[data-reveal].hero-copy.is-visible>.eyebrow{transition-delay:.05s}
+[data-reveal].hero-copy.is-visible>h1{transition-delay:.16s}
+[data-reveal].hero-copy.is-visible>.lead{transition-delay:.28s}
+[data-reveal].hero-copy.is-visible>.btn-row{transition-delay:.4s}
+[data-reveal].hero-copy.is-visible>*{opacity:1;transform:none}
 
 /* Breakpoints */
 @media (min-width:768px){
