@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Disallow: /docs/
+Disallow: /Docs/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: http://odontocompanybangu.ag5agencia.site/sitemap.xml
+# LLMs: http://odontocompanybangu.ag5agencia.site/llms.txt

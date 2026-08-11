@@ -1,0 +1,11 @@
+.wrangler/
+.twbuild/
+node_modules/
+.env
+.env.*
+
+# Vídeos grandes (>100MB) — excluídos temporariamente do Git, resolver depois (LFS ou CDN)
+assets/odontocompany-bangu-clinica-de-confianca.mp4
+assets/odontocompany-bangu-depoimento-paciente-evandro.mp4
+assets/odontocompany-bangu-duvidas-dentista.mp4
+assets/odontocompany-bangu-seguranca-e-naturalidade.mp4
