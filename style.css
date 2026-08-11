@@ -18,6 +18,10 @@
   --ease-out:cubic-bezier(.16,1,.3,1);
 }
 
+/* Quebra de linha manual visível apenas no desktop (usada em títulos específicos) */
+.br-desktop{display:none}
+@media (min-width:1024px){.br-desktop{display:inline}}
+
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--font-corpo);color:var(--grafite-texto);background:var(--branco);-webkit-font-smoothing:antialiased;line-height:1.5}

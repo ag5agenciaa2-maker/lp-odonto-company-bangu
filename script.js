@@ -7,7 +7,7 @@ const SERVICOS = [
   { titulo: 'Estética Dental e Facial', resumo: 'Planejamento digital do sorriso (DSD) e procedimentos faciais para um resultado natural.', itens: ['Lentes de contato dental', 'Facetas', 'Clareamento', 'Harmonização facial', 'Toxina botulínica'], imagem: 'assets/servico-estetica-dental-facial.webp', bento: 'sm' },
   { titulo: 'Ortodontia', resumo: 'Alinhamento e correção da mordida para crianças, adolescentes e adultos.', itens: ['Aparelho fixo metálico', 'Aparelho estético', 'Aparelho autoligado', 'Manutenção mensal', 'Contenção'], imagem: 'assets/servico-ortodontia.webp', bento: 'sm' },
   { titulo: 'Endodontia', resumo: 'Tratamento de canal com anestesia eficaz e acompanhamento radiográfico digital.', itens: ['Canal em dente anterior', 'Canal em molar', 'Retratamento', 'Urgência de dor'], imagem: 'assets/servico-endodontia.webp', bento: 'sm' },
-  { titulo: 'Periodontia', resumo: 'Saúde da gengiva e do osso que sustentam os seus dentes — base de qualquer tratamento duradouro.', itens: ['Limpeza profissional', 'Raspagem', 'Tratamento de gengivite', 'Periodontite', 'Cirurgia gengival'], imagem: 'assets/servico-periodontia.webp', bento: 'sm' },
+  { titulo: 'Periodontia', resumo: 'Saúde da gengiva e do osso que sustentam os seus dentes, base de qualquer tratamento duradouro.', itens: ['Limpeza profissional', 'Raspagem', 'Tratamento de gengivite', 'Periodontite', 'Cirurgia gengival'], imagem: 'assets/servico-periodontia.webp', bento: 'sm' },
   { titulo: 'Clínico Geral', resumo: 'Prevenção, restaurações e acompanhamento de rotina para toda a família.', itens: ['Avaliação e diagnóstico', 'Restauração', 'Profilaxia', 'Aplicação de flúor', 'Odontopediatria'], imagem: 'assets/servico-clinico-geral.webp', bento: 'wide' },
   { titulo: 'Extração de Sisos', resumo: 'Cirurgia de terceiros molares com raio-x panorâmico feito na própria clínica.', itens: ['Siso incluso', 'Siso semi-incluso', 'Extração simples', 'Pós-operatório acompanhado'], imagem: 'assets/servico-extracao-sisos.webp', bento: 'wide' }
 ];
@@ -20,8 +20,8 @@ const VIDEOS = [
   { titulo: 'Relato de paciente', arquivo: 'odontocompany-bangu-depoimento-sonho-realizado', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b19ec16b30c41bbd37f9d.mp4' },
   { titulo: 'Conheça nossa equipe', arquivo: 'odontocompany-bangu-apresentacao-equipe-doutora', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6339994d35aa0a3a195.mp4' },
   { titulo: 'Relato de paciente', arquivo: 'odontocompany-bangu-depoimento-paciente-evandro', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a0116b30c41bbd3d8f1.mp4' },
-  { titulo: 'Relato de paciente — tratamento estético', arquivo: 'odontocompany-bangu-depoimento-autoestima-sorriso', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1ac21c6fe2d3362a294a.mp4' },
-  { titulo: 'Relato de paciente — implante', arquivo: 'odontocompany-bangu-depoimento-implante-brinde', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a9c881827a02eb8f32f.mp4' }
+  { titulo: 'Relato de paciente: tratamento estético', arquivo: 'odontocompany-bangu-depoimento-autoestima-sorriso', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1ac21c6fe2d3362a294a.mp4' },
+  { titulo: 'Relato de paciente: implante', arquivo: 'odontocompany-bangu-depoimento-implante-brinde', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a9c881827a02eb8f32f.mp4' }
 ];
 
 const DEPOIMENTOS = [
@@ -38,10 +38,10 @@ const DEPOIMENTOS = [
 ];
 
 const FAQ = [
-  { q: 'Atendem convênio?', a: 'Sim. Trabalhamos com Amil, SulAmérica, Brasil Dental, Mais Dental e Inpao. Se o seu plano não estiver na lista, fale com a gente pelo WhatsApp — temos condições facilitadas para particulares.' },
-  { q: 'Tenho muito medo de dentista. E agora?', a: 'Você não é exceção — é a maioria. A primeira consulta é uma conversa: explicamos cada passo antes de qualquer procedimento e respeitamos o seu tempo. Nada é feito sem o seu ok.' },
+  { q: 'Atendem convênio?', a: 'Sim. Trabalhamos com Amil, SulAmérica, Brasil Dental, Mais Dental e Inpao. Se o seu plano não estiver na lista, fale com a gente pelo WhatsApp, temos condições facilitadas para particulares.' },
+  { q: 'Tenho muito medo de dentista. E agora?', a: 'Você não é exceção, é a maioria. A primeira consulta é uma conversa: explicamos cada passo antes de qualquer procedimento e respeitamos o seu tempo. Nada é feito sem o seu ok.' },
   { q: 'Quanto custa a avaliação?', a: 'Agende pelo WhatsApp e nossa recepção informa as condições vigentes de avaliação e o plano de tratamento personalizado, sem compromisso.' },
-  { q: 'Atendem crianças e idosos?', a: 'Sim. Atendemos todas as idades, com tratamentos personalizados para cada fase — de odontopediatria a reabilitação com prótese e implante.' }
+  { q: 'Atendem crianças e idosos?', a: 'Sim. Atendemos todas as idades, com tratamentos personalizados para cada fase, de odontopediatria a reabilitação com prótese e implante.' }
 ];
 
 const WHATSAPP = '5521987575433';
