@@ -17,11 +17,11 @@ const SERVICOS = [
    (2 colunas), md = médio, sm = pequeno. */
 
 const VIDEOS = [
-  { titulo: 'Um sonho realizado', arquivo: 'odontocompany-bangu-depoimento-sonho-realizado' },
-  { titulo: 'Conheça nossa equipe', arquivo: 'odontocompany-bangu-apresentacao-equipe-doutora' },
-  { titulo: 'Depoimento: Evandro', arquivo: 'odontocompany-bangu-depoimento-paciente-evandro' },
-  { titulo: 'Autoestima em alta', arquivo: 'odontocompany-bangu-depoimento-autoestima-sorriso' },
-  { titulo: 'Depoimento: implante', arquivo: 'odontocompany-bangu-depoimento-implante-brinde' }
+  { titulo: 'Um sonho realizado', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b19ec16b30c41bbd37f9d.mp4' },
+  { titulo: 'Conheça nossa equipe', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6339994d35aa0a3a195.mp4' },
+  { titulo: 'Depoimento: Evandro', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a0116b30c41bbd3d8f1.mp4' },
+  { titulo: 'Autoestima em alta', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1ac21c6fe2d3362a294a.mp4' },
+  { titulo: 'Depoimento: implante', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a9c881827a02eb8f32f.mp4' }
 ];
 
 const FAQ = [
@@ -325,7 +325,7 @@ function montarVideos(container, videos) {
     btn.addEventListener('click', () => {
       const idx = [...container.children].indexOf(card);
       const v = videos[idx];
-      montarPlayerCustom(card, `assets/${esc(v.arquivo)}.mp4`, 'video-play-icon');
+      montarPlayerCustom(card, v.src, 'video-play-icon');
     }, { once: true });
   });
 
@@ -365,9 +365,9 @@ function ativarVideoAvulso(id, src) {
   }, { once: true });
 }
 
-ativarVideoAvulso('hero-video-btn', 'assets/odontocompany-bangu-clinica-de-confianca.mp4');
-ativarVideoAvulso('gb-video-btn', 'assets/odontocompany-bangu-fachada-e-tomografia.mp4');
-ativarVideoAvulso('dossie-video-btn', 'assets/odontocompany-bangu-seguranca-e-naturalidade.mp4');
+ativarVideoAvulso('hero-video-btn', 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1aca3a19f3b9e09fa7ad.mp4');
+ativarVideoAvulso('gb-video-btn', 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab75b9994d35aa0a77ff6.mp4');
+ativarVideoAvulso('dossie-video-btn', 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6b38880872019f991bf.mp4');
 
 montarAcordeao(document.getElementById('accordion-faq'), FAQ, {
   head: (f, i) => `<span><span class="acc-num">${String(i + 1).padStart(2, '0')}</span><span class="acc-title">${esc(f.q)}</span></span>`,
