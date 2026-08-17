@@ -1,6 +1,6 @@
 /**
  * Cookie Banner Universal — Skill Profissional
- * Versão: 2.1.0 (Refinada AG5)
+ * Versão: 3.0.0 (Padrão AG5)
  * Sem dependências externas. Funciona em qualquer site HTML/JS.
  * LGPD (Brasil) / GDPR (Europa) compliant.
  */
@@ -164,6 +164,7 @@
     function acceptAll() {
         state = { necessary: true, functional: true, analytics: true, performance: true, advertising: true, decided: true };
         save(state);
+        syncToggles();
         dispatch(state);
         hideBanner();
         closeModal();
@@ -174,6 +175,7 @@
     function rejectAll() {
         state = { necessary: true, functional: false, analytics: false, performance: false, advertising: false, decided: true };
         save(state);
+        syncToggles();
         dispatch(state);
         hideBanner();
         closeModal();
@@ -185,6 +187,7 @@
         var custom = readToggles();
         state = Object.assign({}, custom, { decided: true });
         save(state);
+        syncToggles();
         dispatch(state);
         hideBanner();
         closeModal();
@@ -252,7 +255,7 @@
         // Botão flutuante
         on('ck-prefs-btn', 'click', openModal);
 
-        // Link no rodapé (Novo padrão AG5)
+        // Link no rodapé (Padrão AG5)
         on('ck-prefs-link', 'click', function (e) {
             e.preventDefault();
             openModal();

@@ -385,7 +385,7 @@ if (slider) {
       <p>"${esc(d.texto)}"</p>
       <footer>
         <span class="avatar">${esc(d.nome.charAt(0))}</span>
-        <span><strong>${esc(d.nome)}</strong><small>${esc(d.quando)} · ★★★★★</small></span>
+        <span><strong>${esc(d.nome)}</strong><small>Avaliação no Google · ★★★★★</small></span>
       </footer>
     </blockquote>`).join('');
 

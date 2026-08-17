@@ -85,38 +85,41 @@
 
 <main id="inicio">
 
-  <section class="hero container">
-    <!-- PageSpeed fix: data-reveal removido do hero-copy — o elemento LCP (h1/eyebrow) não pode
-         ficar em opacity:0 aguardando o JS, senão o Lighthouse mede o LCP com o delay da animação -->
+  <section class="hero hero-with-bg container">
     <div class="hero-copy">
       <span class="eyebrow">Rede OdontoCompany · presente em todo o Brasil</span>
       <h1>Clínica Odontológica em <span class="accent">Bangu, RJ</span>, seu sorriso cuidado de perto</h1>
       <p class="lead">Clínica odontológica completa: implantes, prótese, estética dental e facial, ortodontia e mais, com planejamento digital, tecnologia moderna e um atendimento que entende quem tem medo de dentista.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="https://wa.me/5521987575433?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação pelo WhatsApp – seção inicial">Agendar minha avaliação</a>
+        <a class="btn btn-primary btn-hero-cta" href="https://wa.me/5521987575433?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação pelo WhatsApp – seção inicial">
+          <span>Agendar minha avaliação</span>
+          <svg class="btn-hero-ico" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
         <a class="btn btn-ghost" href="#servicos">Ver especialidades</a>
       </div>
-    </div>
 
-    <div class="hero-media" data-reveal="right">
-      <div class="hero-video">
-        <video class="hero-vid" autoplay muted loop playsinline>
-          <source src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1aca3a19f3b9e09fa7ad.mp4" type="video/mp4" />
-        </video>
-        <div class="video-bar">
-          <div class="video-progress" role="slider" aria-label="Progresso do vídeo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-            <span class="video-progress-fill"></span>
-          </div>
-          <div class="video-bar-row">
-            <span class="video-time">0:00 / 0:00</span>
-            <div class="video-minictrls">
-              <button class="video-mute" type="button" aria-label="Ativar som"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 9 5 6M21 9l-5 6"/></svg></span></button>
-              <button class="video-expand" type="button" aria-label="Ver em tela cheia"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/></svg></span></button>
+      <!-- Vídeo na Hero posicionado após os botões -->
+      <div class="hero-media-inline" data-reveal="up">
+        <div class="hero-video">
+          <video class="hero-vid" autoplay muted loop playsinline poster="assets/consultorio-odontologico-cadeira-bangu.webp">
+            <source src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1aca3a19f3b9e09fa7ad.mp4" type="video/mp4" />
+          </video>
+          <div class="video-bar">
+            <div class="video-progress" role="slider" aria-label="Progresso do vídeo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+              <span class="video-progress-fill"></span>
+            </div>
+            <div class="video-bar-row">
+              <span class="video-time">0:00 / 0:00</span>
+              <div class="video-minictrls">
+                <button class="video-mute" type="button" aria-label="Ativar som"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 9 5 6M21 9l-5 6"/></svg></span></button>
+                <button class="video-expand" type="button" aria-label="Ver em tela cheia"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/></svg></span></button>
+              </div>
             </div>
           </div>
+          <span class="video-mask"></span>
         </div>
-        <img class="hero-img" src="assets/recepcao-odontocompany-bangu-decorada.webp" alt="Recepção da clínica OdontoCompany Bangu Centro" loading="eager" fetchpriority="high" width="1280" height="960" />
-        <span class="video-mask"></span>
       </div>
     </div>
   </section>
@@ -127,8 +130,8 @@
     <div class="container">
       <div class="section-head center" data-reveal="up">
         <span class="eyebrow">Por que adiar dói mais</span>
-        <h2>Entendemos suas dúvidas antes de qualquer procedimento.</h2>
-        <p class="lead">A maior parte das pessoas que chega até nós já convive há anos com um dente que incomoda. Aqui, a primeira conversa é sobre você, não sobre o procedimento.</p>
+        <h2>Recupere o prazer de sorrir e mastigar sem medo.</h2>
+        <p class="lead">A maior parte dos nossos pacientes convivia há anos com dor ou vergonha do sorriso antes de nos procurar. Na OdontoCompany Bangu, você encontra acolhimento, clareza e transparência desde o primeiro minuto.</p>
       </div>
 
       <div class="compare-grid">
@@ -137,11 +140,11 @@
             <img src="assets/problema-momento-cotidiano-cobrindo-boca.webp" alt="Pessoa cobrindo a boca ao rir em um momento cotidiano por vergonha do sorriso" loading="lazy" width="1024" height="1024" />
           </div>
           <span class="compare-tag compare-tag-problema">O problema</span>
-          <h3>A incerteza que trava você</h3>
+          <h3>A incerteza que trava o seu sorriso</h3>
           <ul>
             <li><span class="compare-ico" aria-hidden="true">✕</span>Não saber o que é urgente e o que pode esperar</li>
-            <li><span class="compare-ico" aria-hidden="true">✕</span>Medo de um orçamento fora da realidade</li>
-            <li><span class="compare-ico" aria-hidden="true">✕</span>Vergonha do sorriso que faz adiar a consulta</li>
+            <li><span class="compare-ico" aria-hidden="true">✕</span>Medo de sentir dor ou de um orçamento inacessível</li>
+            <li><span class="compare-ico" aria-hidden="true">✕</span>Vergonha e receio de ser julgado ao ir ao dentista</li>
           </ul>
         </div>
 
@@ -152,17 +155,22 @@
             <img src="assets/solucao-momento-cotidiano-sorriso-aberto.webp" alt="Pessoa rindo abertamente e com confiança em um momento cotidiano descontraído" loading="lazy" width="1024" height="1024" />
           </div>
           <span class="compare-tag compare-tag-solucao">A solução</span>
-          <h3>A clareza que te move</h3>
+          <h3>A tranquilidade de ser bem cuidado</h3>
           <ul>
-            <li><span class="compare-ico" aria-hidden="true">✓</span>Avaliação sem pressa e sem julgamento</li>
-            <li><span class="compare-ico" aria-hidden="true">✓</span>Planejamento digital: você vê o resultado antes</li>
-            <li><span class="compare-ico" aria-hidden="true">✓</span>Raio-x, cirurgia, prótese e manutenção no mesmo lugar</li>
+            <li><span class="compare-ico" aria-hidden="true">✓</span>Avaliação humanizada, sem pressa e sem julgamentos</li>
+            <li><span class="compare-ico" aria-hidden="true">✓</span>Planejamento digital: você vê o resultado com clareza</li>
+            <li><span class="compare-ico" aria-hidden="true">✓</span>Raio-X panorâmico, cirurgia, próteses e implantes no mesmo local</li>
           </ul>
         </div>
       </div>
 
       <div class="compare-foot" data-reveal="up">
-        <a class="btn btn-primary" href="https://wa.me/5521987575433?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação pelo WhatsApp – seção comparação">Agendar minha avaliação</a>
+        <a class="btn btn-primary btn-hero-cta" href="https://wa.me/5521987575433?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação pelo WhatsApp – seção comparação">
+          <span>Agendar minha avaliação</span>
+          <svg class="btn-hero-ico" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -187,7 +195,19 @@
   <section id="depoimentos" class="section section-dark depo-section">
     <div class="container narrow">
       <div class="head-row" data-reveal="up">
-        <h2 class="on-dark">Quem já sentou na cadeira conta melhor.</h2>
+        <div>
+          <h2 class="on-dark">Quem já sentou na cadeira conta melhor.</h2>
+          <!-- Selo Minimalista Google (Estilo Lumina) -->
+          <div class="google-badge-lumina">
+            <svg class="google-ico" viewBox="0 0 24 24" width="14" height="14">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span class="gb-text">Google</span>
+          </div>
+        </div>
       </div>
       <div class="depo-slider-wrap">
         <span class="depo-quote-mark" aria-hidden="true">”</span>
@@ -529,36 +549,72 @@
         <span>Bangu Centro</span>
       </span>
     </a>
-    <button class="drawer-close" type="button" aria-label="Fechar menu" aria-controls="drawer">✕</button>
+    <button class="drawer-close" type="button" aria-label="Fechar menu" aria-controls="drawer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
   </div>
-  <nav class="drawer-nav" aria-label="Navegação mobile">
-    <a href="#inicio" data-drawer-close>Início</a>
-    <a href="#servicos" data-drawer-close>Serviços</a>
-    <a href="#sobre" data-drawer-close>Clínica</a>
-    <a href="#depoimentos" data-drawer-close>Depoimentos</a>
-    <a href="#contato" data-drawer-close>Contato</a>
-    <a class="btn btn-primary btn-sm" href="https://wa.me/5521987575433?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação pelo WhatsApp – menu mobile" data-drawer-close>Agendar avaliação</a>
-  </nav>
+
+  <div class="drawer-body">
+    <nav class="drawer-nav" aria-label="Navegação mobile">
+      <a href="#inicio" data-drawer-close class="drawer-link">
+        <span class="drawer-num">01</span>
+        <span class="drawer-label">Início</span>
+        <span class="drawer-arrow">→</span>
+      </a>
+      <a href="#servicos" data-drawer-close class="drawer-link">
+        <span class="drawer-num">02</span>
+        <span class="drawer-label">Serviços & Especialidades</span>
+        <span class="drawer-arrow">→</span>
+      </a>
+      <a href="#sobre" data-drawer-close class="drawer-link">
+        <span class="drawer-num">03</span>
+        <span class="drawer-label">Nossa Clínica em Bangu</span>
+        <span class="drawer-arrow">→</span>
+      </a>
+      <a href="#depoimentos" data-drawer-close class="drawer-link">
+        <span class="drawer-num">04</span>
+        <span class="drawer-label">Depoimentos & Avaliações</span>
+        <span class="drawer-arrow">→</span>
+      </a>
+      <a href="#contato" data-drawer-close class="drawer-link">
+        <span class="drawer-num">05</span>
+        <span class="drawer-label">Localização & Contato</span>
+        <span class="drawer-arrow">→</span>
+      </a>
+    </nav>
+
+    <div class="drawer-cta-wrap">
+      <a class="btn btn-primary btn-block drawer-cta" href="https://wa.me/5521987575433?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação pelo WhatsApp – menu mobile" data-drawer-close>
+        <span>Agendar Avaliação</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+
+    <div class="drawer-footer-info">
+      <div class="drawer-badge">CRO-RJ 41825 · CRO Clínica 9492</div>
+      <p class="drawer-address">Rua Silva Cardoso, Bangu · Rio de Janeiro/RJ</p>
+    </div>
+  </div>
 </aside>
 
 <script src="script.js" defer></script>
 
-<!-- ========== COOKIE BANNER (LGPD) — Padrão AG5 ========== -->
+<!-- ========== COOKIE BANNER (LGPD) — Padrão AG5 v3.0.0 ========== -->
+<!-- Estrutura final validada — NÃO adicionar <h2>/título no banner,
+     ele herda font-size de heading do navegador e fica desproporcional. Manter só o <p>. -->
 <div id="ck-banner" class="ck-banner" role="dialog" aria-modal="true" aria-label="Aviso de cookies" aria-live="polite" aria-hidden="true">
   <div class="ck-banner__inner">
     <div class="ck-banner__content">
-      <h2 class="ck-banner__title">Valorizamos sua privacidade</h2>
       <p class="ck-banner__text">
-        Utilizamos cookies para aprimorar sua experiência de navegação, exibir conteúdo
-        personalizado e analisar nosso tráfego. Ao clicar em <strong>"Aceitar todos"</strong>,
-        você concorda com nosso uso de cookies conforme nossa
+        Usamos cookies para melhorar sua experiência neste site e analisar o tráfego de forma anônima.
+        Ao continuar, você concorda com a nossa
         <a href="politica-de-privacidade.html" class="ck-banner__link">Política de Privacidade</a>.
       </p>
     </div>
     <div class="ck-banner__actions">
-      <button id="ck-customize" class="ck-btn ck-btn--ghost">Personalizar</button>
-      <button id="ck-reject" class="ck-btn ck-btn--outline">Rejeitar</button>
-      <button id="ck-accept-all" class="ck-btn ck-btn--primary">Aceitar todos</button>
+      <button id="ck-customize" class="ck-btn ck-btn--ghost">Preferências</button>
+      <button id="ck-reject" class="ck-btn ck-btn--outline">Recusar</button>
+      <button id="ck-accept-all" class="ck-btn ck-btn--primary">Aceitar Todos</button>
     </div>
   </div>
 </div>
@@ -658,9 +714,8 @@
     </div>
 
     <div class="ck-modal__footer">
-      <button id="ck-modal-reject" class="ck-btn ck-btn--outline">Rejeitar</button>
       <button id="ck-modal-save" class="ck-btn ck-btn--ghost">Salvar Preferências</button>
-      <button id="ck-modal-accept-all" class="ck-btn ck-btn--primary">Aceitar todos</button>
+      <button id="ck-modal-accept-all" class="ck-btn ck-btn--primary">Aceitar Todos</button>
     </div>
 
   </div>
