@@ -125,7 +125,7 @@
         syncToggles();
         modal.classList.add('ck-modal--visible');
         modal.removeAttribute('aria-hidden');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('is-drawer-open');
         setTimeout(function () {
             var closeBtn = document.getElementById('ck-modal-close');
             if (closeBtn) closeBtn.focus();
@@ -137,7 +137,7 @@
         if (!modal) return;
         modal.classList.remove('ck-modal--visible');
         modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        document.body.classList.remove('is-drawer-open');
     }
 
     function syncToggles() {

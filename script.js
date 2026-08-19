@@ -18,7 +18,6 @@ const SERVICOS = [
 
 const VIDEOS = [
   { titulo: 'Relato de paciente', arquivo: 'odontocompany-bangu-depoimento-sonho-realizado', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b19ec16b30c41bbd37f9d.mp4' },
-  { titulo: 'Conheça nossa equipe', arquivo: 'odontocompany-bangu-apresentacao-equipe-doutora', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6339994d35aa0a3a195.mp4' },
   { titulo: 'Relato de paciente', arquivo: 'odontocompany-bangu-depoimento-paciente-evandro', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a0116b30c41bbd3d8f1.mp4' },
   { titulo: 'Relato de paciente: tratamento estético', arquivo: 'odontocompany-bangu-depoimento-autoestima-sorriso', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1ac21c6fe2d3362a294a.mp4' },
   { titulo: 'Relato de paciente: implante', arquivo: 'odontocompany-bangu-depoimento-implante-brinde', src: 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1a9c881827a02eb8f32f.mp4' }
@@ -103,7 +102,7 @@ function montarServicosPremium(container, servicos) {
 
     return `
     <a class="bento-card bento-${tamanho}" style="--d:${i * 70}ms"
-       href="https://wa.me/${WHATSAPP}?text=${texto}" target="_blank" rel="noopener"
+       href="https://wa.me/${WHATSAPP}?text=${texto}" target="_blank" rel="noopener noreferrer"
        aria-label="Agendar avaliação sobre ${esc(s.titulo)}">
       <img class="bento-bg" src="${esc(s.imagem)}" alt="" loading="lazy"
            onerror="this.closest('.bento-card').classList.add('bento-fallback');this.remove()" />
@@ -122,7 +121,7 @@ function montarServicosPremium(container, servicos) {
   }).join('');
 
   const cards = container.querySelectorAll('.bento-card');
-  cards.forEach((c) => { c.style.opacity = '0'; c.style.transform = 'translateY(28px)'; });
+  cards.forEach((c) => c.classList.add('bento-pre-reveal'));
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -330,7 +329,7 @@ function montarVideos(container, videos) {
   });
 
   const cards = container.querySelectorAll('.video-card');
-  cards.forEach((c) => { c.style.opacity = '0'; c.style.transform = 'translateY(24px)'; });
+  cards.forEach((c) => c.classList.add('video-pre-reveal'));
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -368,6 +367,8 @@ function ativarVideoAvulso(id, src) {
 ativarVideoAvulso('hero-video-btn', 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7b1aca3a19f3b9e09fa7ad.mp4');
 ativarVideoAvulso('gb-video-btn', 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab75b9994d35aa0a77ff6.mp4');
 ativarVideoAvulso('dossie-video-btn', 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6b38880872019f991bf.mp4');
+ativarVideoAvulso('faq-video-btn-mobile', 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6339994d35aa0a3a195.mp4');
+ativarVideoAvulso('faq-video-btn-desktop', 'https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/6a7ab6339994d35aa0a3a195.mp4');
 
 montarAcordeao(document.getElementById('accordion-faq'), FAQ, {
   head: (f, i) => `<span><span class="acc-num">${String(i + 1).padStart(2, '0')}</span><span class="acc-title">${esc(f.q)}</span></span>`,
@@ -518,12 +519,34 @@ if (drawerToggle && drawer) {
   });
 }
 
-/* ---------- Header: sombra ao rolar ---------- */
+/* ---------- Header: sombra ao rolar + esconde/mostra por direção ---------- */
 const siteHeader = document.querySelector('.site-header');
 if (siteHeader) {
-  const atualizarHeader = () => siteHeader.classList.toggle('is-scrolled', window.scrollY > 8);
+  let ultimoScrollY = window.scrollY;
+  let rafPendente = false;
+
+  const atualizarHeader = () => {
+    rafPendente = false;
+    const y = window.scrollY;
+    siteHeader.classList.toggle('is-scrolled', y > 8);
+
+    const drawerAberto = document.body.classList.contains('is-drawer-open');
+    if (!drawerAberto) {
+      if (y > ultimoScrollY && y > siteHeader.offsetHeight) {
+        siteHeader.classList.add('is-hidden');
+      } else {
+        siteHeader.classList.remove('is-hidden');
+      }
+    }
+    ultimoScrollY = y;
+  };
+
   atualizarHeader();
-  window.addEventListener('scroll', atualizarHeader, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (rafPendente) return;
+    rafPendente = true;
+    requestAnimationFrame(atualizarHeader);
+  }, { passive: true });
 }
 
 /* ---------- Formulário → WhatsApp ---------- */
@@ -704,3 +727,4 @@ if (form) {
     });
   }
 })();
+

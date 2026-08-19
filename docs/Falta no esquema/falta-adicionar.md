@@ -22,7 +22,6 @@
 - [ ] `founder.image` — Foto da responsável técnica não localizada.
 - [ ] `founder.sameAs` — Instagram pessoal da Dra. Karoline Alves não encontrado (só o Instagram institucional da clínica).
 - [ ] `legalName` — Razão social/CNPJ não exibidos no site nem no dossiê.
-- [ ] `datePublished` / `dateModified` da WebPage — Não incluídos por não haver data confiável de publicação da LP.
 - [ ] `hasOfferCatalog.itemListElement[].description` — Cada serviço no schema está sem descrição curta; o dossiê tem listas extensas de sub-procedimentos por especialidade que podem virar descrições de 1 linha, se desejado futuramente.
 
 ## 🟢 FAQ
@@ -48,6 +47,7 @@
 - [x] `@type` — Mantido `Dentist` (mais específico disponível na tabela da skill)
 - [x] `hasOfferCatalog` — 8 especialidades do dossiê como `Service` dentro de `OfferCatalog`
 - [x] `@graph` com `@id` únicos — #negocio, #website, #webpage, #faq
+- [x] `datePublished` / `dateModified` da WebPage — `2025-11-01` (mês de fundação/inauguração) e `2026-08-17` (última edição de conteúdo relevante na LP)
 
 ---
 
